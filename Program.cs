@@ -28,7 +28,7 @@
 
 
 Product test = new Product();
-test.setProductPrice(10);
+test.setProductPrice(100);
 test.setProductVAT(22);
 
 test.setProductName("Prodotto test");
@@ -36,8 +36,8 @@ test.setProductDescription("Dexrizione Test");
 
 Console.WriteLine("---------");
 
-Console.WriteLine("Prezzo NO IVA: "+ test.getProductPriceNoVAT);
-Console.WriteLine("Prezzo CON IVA: " + test.getProductPriceVAT);
+Console.WriteLine("Prezzo NO IVA: "+ test.getProductPriceNoVAT() + " €");
+Console.WriteLine("Prezzo CON IVA: " + test.getProductPriceVAT() + " €");
 public class Product
 {
     private int productCode;
