@@ -28,11 +28,17 @@
 
 
 Product test = new Product();
-test.setProductPrice(100);
-test.setProductVAT(22);
+
+// SET INFORMAZIONI
 
 test.setProductName("Prodotto test");
 test.setProductDescription("Dexrizione Test");
+test.setProductPrice(100);
+test.setProductVAT(22);
+
+// SET INFORMAZIONI
+
+// STAMPA A VIDEO LE INFORMAZIONI
 
 Console.WriteLine("---------");
 Console.WriteLine("Codice: " + test.getProductCode());
@@ -46,6 +52,11 @@ Console.WriteLine("IVA: " + test.getProductVAT() + " %");
 Console.WriteLine("Prezzo CON IVA: " + test.getProductPriceVAT() + "Euro");
 
 Console.WriteLine("---------");
+
+Console.WriteLine("PADDED CODE: " + test.getPricePadded());
+
+// STAMPA A VIDEO LE INFORMAZIONI
+
 public class Product
 {
     private int productCode;
@@ -57,9 +68,8 @@ public class Product
     public Product()
     {
         Random rnd = new Random();
-        this.productCode = rnd.Next();
+        this.productCode = rnd.Next(0,99999999);
     }
-
 
     //---- GETTER E SETTER ----
     public void setProductPrice(double price)
@@ -112,6 +122,25 @@ public class Product
 
     //---- FUNZIONI BASE ----
 
+    public string getPricePadded()
+    {
+        string productCode = this.productCode.ToString();
+
+        if (this.productCode.ToString().Length < 8){
+
+            for (int i = this.productCode.ToString().Length; i < 8; i++)
+            {
+                productCode = "0" + productCode;
+            };
+
+
+            return productCode;
+        }
+        else {
+            return this.productCode.ToString();
+        }
+        
+    }
 
     //---- FUNZIONI BASE ----
 
