@@ -31,25 +31,25 @@ Product test = new Product();
 
 // SET INFORMAZIONI
 
-test.setProductName("Prodotto test");
-test.setProductDescription("Dexrizione Test");
-test.setProductPrice(100);
-test.setProductVAT(22);
+test.setName("Prodotto test");
+test.setDescription("Dexrizione Test");
+test.setPrice(100);
+test.setVAT(22);
 
 // SET INFORMAZIONI
 
 // STAMPA A VIDEO LE INFORMAZIONI
 
 Console.WriteLine("---------");
-Console.WriteLine("Codice: " + test.getProductCode());
-Console.WriteLine("Nome: " + test.getProductName());
-Console.WriteLine("Nome Epspanso: " + test.getProductNameExpanded());
-Console.WriteLine("Descrizione: " + test.getProductDescription());
+Console.WriteLine("Codice: " + test.getCode());
+Console.WriteLine("Nome: " + test.getName());
+Console.WriteLine("Nome Epspanso: " + test.getNameExpanded());
+Console.WriteLine("Descrizione: " + test.getDescription());
 Console.WriteLine("---------");
 
-Console.WriteLine("Prezzo NO IVA: "+ test.getProductPriceNoVAT() + "Euro");
-Console.WriteLine("IVA: " + test.getProductVAT() + " %");
-Console.WriteLine("Prezzo CON IVA: " + test.getProductPriceVAT() + "Euro");
+Console.WriteLine("Prezzo NO IVA: "+ test.getPriceNoVAT() + "Euro");
+Console.WriteLine("IVA: " + test.getVAT() + " %");
+Console.WriteLine("Prezzo CON IVA: " + test.getPriceVAT() + "Euro");
 
 Console.WriteLine("---------");
 
@@ -59,85 +59,83 @@ Console.WriteLine("PADDED CODE: " + test.getPricePadded());
 
 public class Product
 {
-    private int productCode;
-    private string productName;
-    private string productDescription;
-    private double productPrice;
-    private int productVAT;
+    private int code;
+    private string name;
+    private string description;
+    private double price;
+    private int VAT;
 
     public Product()
     {
         Random rnd = new Random();
-        this.productCode = rnd.Next(0,99999999);
+        this.code = rnd.Next(0,99999999);
     }
 
     //---- GETTER E SETTER ----
-    public void setProductPrice(double price)
+    public void setPrice(double price)
     {
-        this.productPrice = price;
+        this.price = price;
     }
-    public void setProductVAT(int VAT)
+    public void setVAT(int VAT)
     {
-        this.productVAT = VAT;
+        this.VAT = VAT;
     }
-    public void setProductName(string name)
+    public void setName(string name)
     {
-        this.productName = name;
+        this.name = name;
     }
-    public void setProductDescription(string description)
+    public void setDescription(string description)
     {
-        this.productDescription = description;
+        this.description = description;
     }
-    public int getProductCode()
+    public int getCode()
     {
-        return this.productCode;
+        return this.code;
     }
-    public string getProductName()
+    public string getName()
     {
-        return this.productName;
+        return this.name;
     }
-    public string getProductNameExpanded()
+    public string getNameExpanded()
     {
-        return this.productCode + " - " + this.productName;
+        return this.code + " - " + this.name;
     }
-    public string getProductDescription()
+    public string getDescription()
     {
-        return this.productDescription;
+        return this.description;
     }
-    public double getProductPriceNoVAT()
+    public double getPriceNoVAT()
     {
-        return this.productPrice;
+        return this.price;
     }
-    public double getProductPriceVAT()
+    public double getPriceVAT()
     {
-        return this.productPrice + (this.productPrice * this.productVAT / 100);
+        return this.price + (this.price * this.VAT / 100);
     }
-    public int getProductVAT()
+    public int getVAT()
     {
-        return this.productVAT;
+        return this.VAT;
     }
 
     //---- GETTER E SETTER ----
 
 
     //---- FUNZIONI BASE ----
-
     public string getPricePadded()
     {
-        string productCode = this.productCode.ToString();
+        string productCode = this.code.ToString();
 
-        if (this.productCode.ToString().Length < 8){
+        if (this.code.ToString().Length < 8){
 
-            for (int i = this.productCode.ToString().Length; i < 8; i++)
+            for (int i = this.code.ToString().Length; i < 8; i++)
             {
                 productCode = "0" + productCode;
             };
 
-
             return productCode;
         }
         else {
-            return this.productCode.ToString();
+            return this.code.ToString();
         }
         
     }
