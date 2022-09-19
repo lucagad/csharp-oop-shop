@@ -35,9 +35,17 @@ test.setProductName("Prodotto test");
 test.setProductDescription("Dexrizione Test");
 
 Console.WriteLine("---------");
+Console.WriteLine("Codice: " + test.getProductCode());
+Console.WriteLine("Nome: " + test.getProductName());
+Console.WriteLine("Nome Epspanso: " + test.getProductNameExpanded());
+Console.WriteLine("Descrizione: " + test.getProductDescription());
+Console.WriteLine("---------");
 
-Console.WriteLine("Prezzo NO IVA: "+ test.getProductPriceNoVAT() + " €");
-Console.WriteLine("Prezzo CON IVA: " + test.getProductPriceVAT() + " €");
+Console.WriteLine("Prezzo NO IVA: "+ test.getProductPriceNoVAT() + "Euro");
+Console.WriteLine("IVA: " + test.getProductVAT() + " %");
+Console.WriteLine("Prezzo CON IVA: " + test.getProductPriceVAT() + "Euro");
+
+Console.WriteLine("---------");
 public class Product
 {
     private int productCode;
@@ -58,40 +66,52 @@ public class Product
     {
         this.productPrice = price;
     }
-
     public void setProductVAT(int VAT)
     {
         this.productVAT = VAT;
     }
-
     public void setProductName(string name)
     {
         this.productName = name;
     }
-
     public void setProductDescription(string description)
     {
         this.productDescription = description;
     }
-
     public int getProductCode()
     {
         return this.productCode;
+    }
+    public string getProductName()
+    {
+        return this.productName;
+    }
+    public string getProductNameExpanded()
+    {
+        return this.productCode + " - " + this.productName;
+    }
+    public string getProductDescription()
+    {
+        return this.productDescription;
+    }
+    public double getProductPriceNoVAT()
+    {
+        return this.productPrice;
+    }
+    public double getProductPriceVAT()
+    {
+        return this.productPrice + (this.productPrice * this.productVAT / 100);
+    }
+    public int getProductVAT()
+    {
+        return this.productVAT;
     }
 
     //---- GETTER E SETTER ----
 
 
     //---- FUNZIONI BASE ----
-    public double getProductPriceNoVAT()
-    {
-        return this.productPrice;
-    }
 
-    public double getProductPriceVAT()
-    {
-        return this.productPrice + (this.productPrice * this.productVAT / 100);
-    }
 
     //---- FUNZIONI BASE ----
 
