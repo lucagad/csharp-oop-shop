@@ -59,33 +59,86 @@
 
 Product prodotto = new Product();
 
-// SET INFORMAZIONI
+// AZIONI PRODOTTO
 
+#region
 prodotto.Name = "Prodotto test";
 prodotto.Description = "Descrizione Test";
 prodotto.Price = 100;
 prodotto.VAT = 22;
 
-// SET INFORMAZIONI
-
-// STAMPA A VIDEO LE INFORMAZIONI
+Console.WriteLine(" ");
+Console.WriteLine("----------------");
+Console.WriteLine(" ");
 
 prodotto.printInfo();
 
+Console.WriteLine(" ");
+Console.WriteLine("----------------");
+Console.WriteLine(" ");
+#endregion
+
 Water acqua = new Water(0 , "Dolomiti", 1.5);
 
+// AZIONI ACQUA
+#region
 acqua.Name = "Prodotto acqua";
 acqua.Description = "Descrizione acqua";
 acqua.Price = 1;
 acqua.VAT = 10;
 
+Console.WriteLine(" ");
+Console.WriteLine("----------------");
+Console.WriteLine(" ");
+
 acqua.printInfo();
 
+Console.WriteLine(" ");
+Console.WriteLine("----------------");
+Console.WriteLine(" ");
+
 Console.WriteLine("I litri d'acqua disponibili convertiti in Galloni è: " + acqua.convertToGallons());
+Console.WriteLine(" ");
 
 acqua.drinkWater(0.6);
 //acqua.drinkWater(1);
 
 Console.WriteLine("I litri d'acqua disponibili convertiti in Galloni è: " + acqua.convertToGallons());
 
+Console.WriteLine(" ");
+Console.WriteLine("----------------");
+Console.WriteLine(" ");
+
 acqua.printInfo();
+
+#endregion
+
+
+BagOfFruit mele = new BagOfFruit("Mele Golden", DateOnly.Parse("12/31/2022"), 3);
+
+// AZIONI MELE
+#region
+mele.Name = "Sacchetto di Mele";
+mele.Description = "Descrizione Mele";
+mele.Price = 5;
+mele.VAT = 10;
+
+Console.WriteLine(" ");
+Console.WriteLine("----------------");
+Console.WriteLine(" ");
+
+mele.printInfo();
+
+Console.WriteLine(" ");
+Console.WriteLine("----------------");
+Console.WriteLine(" ");
+
+
+
+Console.WriteLine(" ");
+Console.WriteLine("----------------");
+Console.WriteLine(" ");
+
+mele.printInfo();
+
+#endregion
