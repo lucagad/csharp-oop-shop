@@ -1,5 +1,4 @@
 ﻿
-using System.Runtime.ConstrainedExecution;
 
 public class Water : Product
 {
@@ -67,7 +66,5 @@ public class Water : Product
     {
         return this.LitersAvailable * Gallons;
     }
-
-    //metodo statico convertiInGalloni(double litri)
 
 }

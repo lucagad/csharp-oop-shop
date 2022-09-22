@@ -24,10 +24,7 @@
 
 //BONUS: create un metodo che restituisca il codice con un pad left di 0 per arrivare a 8 caratteri (ad esempio codice 91 diventa 00000091, mentre codice 123445567 resta come è)
 #endregion
-
-
 //ESERCIZIO 22/09
-
 
 //A partire da quanto già fatto con csharp-oop-shop dove vi era stato chiesto di creare una classe Prodotto generica per gestire un generico prodotto dello Shop,
 //vi chiedo di essere più specifichi e di creare le sottoclassi opportune di alcuni prodotti che potremmo identificare nel nostro shop.
@@ -42,15 +39,15 @@
 //ereditando i metodi e gli attributi generici dalla classe Prodotto creata nell’esercizio precedente.
 
 //Un esempio per la classe Acqua che eredità Prodotto è aggiungere i seguenti attributi e metodi:
-//  - attributo litri: per indicare quanti litri di acqua ci sono nella bottiglia di acqua
-//  - attributo ph: che indica il livello di acidità dell’acqua (sola lettura)
-//  - attributo sorgente: che indica la sorgente di provenienza dell’acqua (sola lettura)
+//  - attributo litri: per indicare quanti litri di acqua ci sono nella bottiglia di acqua (OK)
+//  - attributo ph: che indica il livello di acidità dell’acqua (sola lettura) (OK)
+//  - attributo sorgente: che indica la sorgente di provenienza dell’acqua (sola lettura) (OK)
 
-//  - metodo bevi (double litriDaBere) che toglie dall’attributo litri una quantità pari a litriDaBere di acqua se presenti.
-//  - metodo riempi(double litri) che riempie la bottiglia di acqua con tot litri di acqua, stando attenti a non riempirla troppo.
-//  - metodo svuota() che rimuove tutta l’acqua dalla bottiglia.
-//  - metodo stampaProdotto() che fa l’override del metodo di base StampaProdotto già dichiarato nella superclasse Prodotto (se non lo avete già fatto dichiaratelo anche nella classe prodotto è si occupa di stampare il “codice - nome”, l lo abbiamo chiamato NomeEsteso), per stampare oltre al codice e al nome dell’acqua, anche la sua sorgente, il ph e i litri contenuti.
-//  - un metodo statico convertiInGalloni(double litri) che presa una quantità di litri restituisca la conversione dei litri in galloni, sapendo che 1 litro è equivalente a 3,785 galloni (ricordatevi di codificare le costanti come 3.785 nel modo corretto come visto in classe).
+//  - metodo bevi (double litriDaBere) che toglie dall’attributo litri una quantità pari a litriDaBere di acqua se presenti. (OK)
+//  - metodo riempi(double litri) che riempie la bottiglia di acqua con tot litri di acqua, stando attenti a non riempirla troppo. (OK)
+//  - metodo svuota() che rimuove tutta l’acqua dalla bottiglia. (OK)
+//  - metodo stampaProdotto() che fa l’override del metodo di base StampaProdotto già dichiarato nella superclasse Prodotto. (OK)
+//  - metodo statico convertiInGalloni(double litri) che presa una quantità di litri restituisca la conversione dei litri in galloni, sapendo che 1 litro è equivalente a 3,785 galloni. (OK)
 
 //Ricordatevi di creare questi metodi in maniera responsabile, in modo che non rendono “incoerente” lo stato dei vostri oggetti (ad esempio non posso bere più dei litri contenuti nella bottiglia, o non posso riempire più di tot una bottiglia!).
 
@@ -65,7 +62,7 @@ Product prodotto = new Product();
 // SET INFORMAZIONI
 
 prodotto.Name = "Prodotto test";
-prodotto.Description = "Dexrizione Test";
+prodotto.Description = "Descrizione Test";
 prodotto.Price = 100;
 prodotto.VAT = 22;
 
@@ -88,6 +85,7 @@ Console.WriteLine("I litri d'acqua disponibili convertiti in Galloni è: " + acq
 
 acqua.drinkWater(0.6);
 //acqua.drinkWater(1);
+
 Console.WriteLine("I litri d'acqua disponibili convertiti in Galloni è: " + acqua.convertToGallons());
 
 acqua.printInfo();
