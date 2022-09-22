@@ -84,7 +84,7 @@ acqua.VAT = 10;
 
 acqua.printInfo();
 
-acqua.drinkWater(0.5);
-acqua.drinkWater(1);
+acqua.drinkWater(1.6);
+//acqua.drinkWater(1);
 
 acqua.printInfo();

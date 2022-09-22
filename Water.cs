@@ -38,21 +38,32 @@ public class Water : Product
 
     }
 
+    public void emptyWater()
+    {
+        this.LitersAvailable = 0;
+    }
+
     public void drinkWater( double water )
     {
-        if( this.LitersAvailable > 0 && this.LitersAvailable >= water)
+        if (this.LitersAvailable > 0 && this.LitersAvailable >= water)
         {
             this.LitersAvailable = this.LitersAvailable - water;
 
-        } else if (this.LitersAvailable == 0)
+        }
+        else if (this.LitersAvailable == 0)
         {
             Console.WriteLine("La bottiglia d'acqua è vuota");
 
-        } else Console.WriteLine("La quantità richiesta è maggiore di quella disponibile");
+        }
+        else
+        {
+            Console.WriteLine("La quantità richiesta è maggiore di quella disponibile, la bottiglia è stata svuotata");
+            this.emptyWater();
+
+        }
     }
 
 
-    //metodo bevi(double litriDaBere) che toglie dall’attributo litri una quantità pari a litriDaBere di acqua se presenti.
     //metodo riempi(double litri) che riempie la bottiglia di acqua con tot litri di acqua, stando attenti a non riempirla troppo.
     //metodo svuota() che rimuove tutta l’acqua dalla bottiglia.
     //metodo statico convertiInGalloni(double litri)
