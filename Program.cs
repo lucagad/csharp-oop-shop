@@ -60,34 +60,20 @@
 //Una volta finite più o meno le vostre classi, nel Program.cs, provate a testare un pò i vostri prodotti specializzati, osservando come i metodi della classe generica prodotto e quelli più specifici vengono richiamati e siano disponibili.
 
 
-Product test = new Product();
+Product prodotto = new Product();
 
 // SET INFORMAZIONI
 
-test.Name = "Prodotto test";
-test.Description = "Dexrizione Test";
-test.Price = 100;
-test.VAT = 22;
+prodotto.Name = "Prodotto test";
+prodotto.Description = "Dexrizione Test";
+prodotto.Price = 100;
+prodotto.VAT = 22;
 
 // SET INFORMAZIONI
 
 // STAMPA A VIDEO LE INFORMAZIONI
 
-Console.WriteLine("---------");
-Console.WriteLine("Codice: " + test.Code);
-Console.WriteLine("Nome: " + test.Name);
-Console.WriteLine("Nome Epspanso: " + test.getNameExpanded());
-Console.WriteLine("Descrizione: " + test.Description);
-Console.WriteLine("---------");
-
-Console.WriteLine("Prezzo NO IVA: "+ test.Price + "Euro");
-Console.WriteLine("IVA: " + test.VAT + " %");
-Console.WriteLine("Prezzo CON IVA: " + test.getPriceVAT() + "Euro");
-
-Console.WriteLine("---------");
-
-Console.WriteLine("PADDED CODE: " + test.getPricePadded());
-
+prodotto.printInfo();
 
 Water acqua = new Water(0 , "Dolomiti");
 
@@ -97,19 +83,4 @@ acqua.Price = 1;
 acqua.VAT = 10;
 acqua.Liters = 1.5;
 
-Console.WriteLine("---------");
-Console.WriteLine("Codice: " + acqua.Code);
-Console.WriteLine("Nome: " + acqua.Name);
-Console.WriteLine("Nome Epspanso: " + acqua.getNameExpanded());
-Console.WriteLine("Descrizione: " + acqua.Description);
-Console.WriteLine("PH: " + acqua.Ph);
-Console.WriteLine("Sorgente: " + acqua.Fount);
-Console.WriteLine("---------");
-
-Console.WriteLine("Prezzo NO IVA: " + acqua.Price + "Euro");
-Console.WriteLine("IVA: " + acqua.VAT + " %");
-Console.WriteLine("Prezzo CON IVA: " + acqua.getPriceVAT() + "Euro");
-
-Console.WriteLine("---------");
-
-Console.WriteLine("PADDED CODE: " + acqua.getPricePadded());
+acqua.printInfo();
