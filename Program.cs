@@ -84,7 +84,10 @@ acqua.VAT = 10;
 
 acqua.printInfo();
 
-acqua.drinkWater(1.6);
+Console.WriteLine("I litri d'acqua disponibili convertiti in Galloni è: " + acqua.convertToGallons());
+
+acqua.drinkWater(0.6);
 //acqua.drinkWater(1);
+Console.WriteLine("I litri d'acqua disponibili convertiti in Galloni è: " + acqua.convertToGallons());
 
 acqua.printInfo();

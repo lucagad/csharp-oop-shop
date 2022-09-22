@@ -3,7 +3,7 @@ using System.Runtime.ConstrainedExecution;
 
 public class Water : Product
 {
-
+    protected double Gallons = 3.785;
     public double LitersMax { get; }
     public double LitersAvailable { get; set; }
     public double Ph { get; }
@@ -63,9 +63,11 @@ public class Water : Product
         }
     }
 
+    public double convertToGallons()
+    {
+        return this.LitersAvailable * Gallons;
+    }
 
-    //metodo riempi(double litri) che riempie la bottiglia di acqua con tot litri di acqua, stando attenti a non riempirla troppo.
-    //metodo svuota() che rimuove tutta l’acqua dalla bottiglia.
     //metodo statico convertiInGalloni(double litri)
 
 }
