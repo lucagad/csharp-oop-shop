@@ -1,4 +1,5 @@
 ﻿
+
 public class Product
 {
     public int Code { get;}
@@ -13,7 +14,7 @@ public class Product
         this.Code = rnd.Next(0,99999999);
     }
 
-    //---- GETTER E SETTER ----
+    //---- FUNZIONI BASE ----
 
     public string getNameExpanded()
     {
@@ -25,10 +26,6 @@ public class Product
         return this.Price + (this.Price * this.VAT / 100);
     }
 
-    //---- GETTER E SETTER ----
-
-
-    //---- FUNZIONI BASE ----
     public string getPricePadded()
     {
         string productCode = this.Code.ToString();
@@ -51,4 +48,3 @@ public class Product
     //---- FUNZIONI BASE ----
 
 }
-

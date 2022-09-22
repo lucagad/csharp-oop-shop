@@ -88,3 +88,28 @@ Console.WriteLine("---------");
 
 Console.WriteLine("PADDED CODE: " + test.getPricePadded());
 
+
+Water acqua = new Water(0 , "Dolomiti");
+
+acqua.Name = "Prodotto acqua";
+acqua.Description = "Descrizione acqua";
+acqua.Price = 1;
+acqua.VAT = 10;
+acqua.Liters = 1.5;
+
+Console.WriteLine("---------");
+Console.WriteLine("Codice: " + acqua.Code);
+Console.WriteLine("Nome: " + acqua.Name);
+Console.WriteLine("Nome Epspanso: " + acqua.getNameExpanded());
+Console.WriteLine("Descrizione: " + acqua.Description);
+Console.WriteLine("PH: " + acqua.Ph);
+Console.WriteLine("Sorgente: " + acqua.Fount);
+Console.WriteLine("---------");
+
+Console.WriteLine("Prezzo NO IVA: " + acqua.Price + "Euro");
+Console.WriteLine("IVA: " + acqua.VAT + " %");
+Console.WriteLine("Prezzo CON IVA: " + acqua.getPriceVAT() + "Euro");
+
+Console.WriteLine("---------");
+
+Console.WriteLine("PADDED CODE: " + acqua.getPricePadded());
