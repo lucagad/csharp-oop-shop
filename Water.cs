@@ -1,4 +1,6 @@
 ﻿
+using System.Runtime.ConstrainedExecution;
+
 public class Water : Product
 {
 
@@ -6,7 +8,6 @@ public class Water : Product
     public double LitersAvailable { get; set; }
     public double Ph { get; }
     public string Fount { get; }
-
 
 
     public Water( double ph, string fount, double liters)
@@ -36,5 +37,24 @@ public class Water : Product
         Console.WriteLine(" ");
 
     }
+
+    public void drinkWater( double water )
+    {
+        if( this.LitersAvailable > 0 && this.LitersAvailable >= water)
+        {
+            this.LitersAvailable = this.LitersAvailable - water;
+
+        } else if (this.LitersAvailable == 0)
+        {
+            Console.WriteLine("La bottiglia d'acqua è vuota");
+
+        } else Console.WriteLine("La quantità richiesta è maggiore di quella disponibile");
+    }
+
+
+    //metodo bevi(double litriDaBere) che toglie dall’attributo litri una quantità pari a litriDaBere di acqua se presenti.
+    //metodo riempi(double litri) che riempie la bottiglia di acqua con tot litri di acqua, stando attenti a non riempirla troppo.
+    //metodo svuota() che rimuove tutta l’acqua dalla bottiglia.
+    //metodo statico convertiInGalloni(double litri)
 
 }

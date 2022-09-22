@@ -45,7 +45,6 @@ public class Product
         
     }
 
-
     public virtual void printInfo()
     {
         Console.WriteLine(" ");
