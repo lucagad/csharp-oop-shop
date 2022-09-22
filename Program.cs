@@ -75,12 +75,11 @@ prodotto.VAT = 22;
 
 prodotto.printInfo();
 
-Water acqua = new Water(0 , "Dolomiti");
+Water acqua = new Water(0 , "Dolomiti", 1.5);
 
 acqua.Name = "Prodotto acqua";
 acqua.Description = "Descrizione acqua";
 acqua.Price = 1;
 acqua.VAT = 10;
-acqua.Liters = 1.5;
 
 acqua.printInfo();

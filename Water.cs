@@ -2,15 +2,19 @@
 public class Water : Product
 {
 
-    public double Liters { get; set; }
+    public double LitersMax { get; }
+    public double LitersAvailable { get; set; }
     public double Ph { get; }
     public string Fount { get; }
 
 
-    public Water( double ph, string fount)
+
+    public Water( double ph, string fount, double liters)
     {
         Ph = ph;
         Fount = fount;
+        LitersMax = liters;
+        LitersAvailable = LitersMax;
     }
 
     public override void printInfo()
@@ -30,7 +34,6 @@ public class Water : Product
         Console.WriteLine("---------");
         Console.WriteLine("PADDED CODE: " + this.getPricePadded());
         Console.WriteLine(" ");
-
 
     }
 
